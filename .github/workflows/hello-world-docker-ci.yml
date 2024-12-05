@@ -20,5 +20,5 @@ jobs:
 
       - name: Container time
         run: |
-          echo "Time: ${{ steps.hello-action.outputs.time }}" 
+          echo "Time: ${{ steps.hello-world-docker.outputs.time }}" 
     
