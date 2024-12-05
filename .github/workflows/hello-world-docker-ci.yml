@@ -1,0 +1,24 @@
+name: Hello World Docker CI
+
+on:
+  push:
+    paths: '.github/workflows/hello-world-docker-ci.yml'
+  workflow_dispatch: null
+
+jobs:
+  test-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.3.0
+
+      - name: Run action
+        id: hello-world-docker
+        uses: ./hello-world-docker-action
+        with:
+          who-to-greet: '@eberggren343'
+
+      - name: Container time
+        run: |
+          echo "Time: ${{ steps.hello-action.outputs.time }}" 
+    
