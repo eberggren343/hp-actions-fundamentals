@@ -8,6 +8,9 @@ on:
       - '.github/**'
   schedule:
     - cron: '15 6 * * 0'
+  pull_request:
+    branches:
+      - 'main'
   workflow_dispatch: null
 
 jobs:
